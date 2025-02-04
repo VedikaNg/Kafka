@@ -34,10 +34,8 @@ public class ConsumerKafkaFive {
         while (true){
             ConsumerRecords<String,String> consumerRecords = kafkaConsumer5.poll(Duration.ofMillis(100));
             for(ConsumerRecord<String, String> consumerRecord: consumerRecords){
-                System.out.println(consumerRecord.key());
-                System.out.println(consumerRecord.topic());
-                System.out.println(consumerRecord.value());
-                System.out.println(consumerRecord.offset());
+                System.out.println("Topic consumed by Consumer 5: "+consumerRecord.topic());
+                System.out.println("Message Consumed: "+consumerRecord.value());
             }
         }
     }
